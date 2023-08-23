@@ -28,7 +28,9 @@ class DatabaseSeeder extends Seeder
         $genre1=Genre::create(['name'=>'Romance novel','description'=>'A romance novel generally refers to a type of genre fiction novel which places its primary focus on the relationship and romantic love between two people, and usually has an "emotionally satisfying and optimistic ending."']);
         $genre2=Genre::create(['name'=>'Action fiction','description'=>'Action fiction is a literary genre that focuses on stories that involve high-stakes, high-energy, and fast-paced events.']);
         $genre3=Genre::create(['name'=>'Science fiction','description'=>'Science fiction is a genre of speculative fiction, which typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life.']);
-
+        $genre4=Genre::create(['name'=>'Historical fiction','description'=>'Historical fiction is a literary genre in which the plot takes place in a setting related to the past events, but is fictional.']);
+        $genre5=Genre::create(['name'=>'Mystery','description'=>'Mystery is a fiction genre where the nature of an event, usually a murder or other crime, remains mysterious until the end of the story.']);
+ 
         $author1=Author::create(['first_name'=>' André','last_name'=>'Aciman']);
         $author2=Author::create(['first_name'=>'Veronica','last_name'=>'Roth']);
         $author3=Author::create(['first_name'=>'Frank','last_name'=>'Herbert']);
@@ -56,6 +58,14 @@ class DatabaseSeeder extends Seeder
             'author_id'=>$author3->id,
             'user_id'=>$user3->id,
             'year of release'=>1965
+         ]);
+         $book4=Book::create([
+            'title'=>'Insurgent',
+            'number of pages'=>568,
+            'genre_id'=>$genre3->id,
+            'author_id'=>$author2->id,
+            'user_id'=>$user1->id,
+            'year of release'=>2012
          ]);
 
         // \App\Models\User::factory()->create([
