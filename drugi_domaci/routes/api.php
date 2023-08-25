@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\UserBookController;
+use App\Http\Controllers\API\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,16 @@ Route::delete('/genres/{id}',[GenreController::class,'destroy']);
 
 Route::resource('user.books',UserBookController::class)->only(['index']);
 Route::resource('books',BookControler::class)->only(['index']);
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::group(['middleware' => ['auth:sanctum']], function(){
+    Route::get('/profile', function(Request $request){
+        return auth()->user();
+    });
+    Route::resource('books', BookController::class)->only(['update','store','destroy']);
+
+    Route::post('/logout', [AuthController::class], 'logout');   
+});
 
