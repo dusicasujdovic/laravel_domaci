@@ -37,35 +37,35 @@ class DatabaseSeeder extends Seeder
 
          $book1=Book::create([
             'title'=>'Call me by your name',
-            'number of pages'=>256,
+            'number_of_pages'=>256,
             'genre_id'=>$genre1->id,
             'author_id'=>$author1->id,
             'user_id'=>$user1->id,
-            'year of release'=>2007
+            'year_of_release'=>2007
          ]);
          $book2=Book::create([
             'title'=>'Divergent',
-            'number of pages'=>487,
+            'number_of_pages'=>487,
             'genre_id'=>$genre2->id,
             'author_id'=>$author2->id,
             'user_id'=>$user2->id,
-            'year of release'=>2011
+            'year_of_release'=>2011
          ]);
          $book3=Book::create([
             'title'=>'Dina',
-            'number of pages'=>704,
+            'number_of_pages'=>704,
             'genre_id'=>$genre3->id,
             'author_id'=>$author3->id,
             'user_id'=>$user3->id,
-            'year of release'=>1965
+            'year_of_release'=>1965
          ]);
          $book4=Book::create([
             'title'=>'Insurgent',
-            'number of pages'=>568,
+            'number_of_pages'=>568,
             'genre_id'=>$genre3->id,
             'author_id'=>$author2->id,
             'user_id'=>$user1->id,
-            'year of release'=>2012
+            'year_of_release'=>2012
          ]);
 
         // \App\Models\User::factory()->create([
